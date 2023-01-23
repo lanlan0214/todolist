@@ -11,7 +11,7 @@ const TodoList = () => {
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedTodos) setTodos(storedTodos)
+    if (storedTodos.length > 0) setTodos(status => [...status, ...storedTodos])
 
   }, []);
 
